@@ -1,0 +1,53 @@
+{% extends "HostguestBundle:Front:Layout.html.twig" %}
+{% block  Home_front %}
+    <section class="awe-parallax category-heading-section-demo" style="background-position: 50% -48px;">
+        <div class="awe-overlay"></div>
+        <div class="container">
+            <div class="category-heading-content category-heading-content__2 text-uppercase">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><span>Reservation</span></li>
+                    </ul>
+                </div>
+                <h3></h3>
+                <br>
+                <h2>Modifier votre reservation<a href="#" class="flight-popup-open"><i class="awe-icon awe-icon-info"></i></a></h2>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+
+
+<div class="booking-info">
+
+    {{ form_start(edit_form) }}
+
+        {{ form_widget(edit_form) }}
+
+    <div class="form-submit">
+        <div class="add-to-cart"> <button type="submit">Modifier</button></div>
+    </div>
+    {{ form_end(edit_form) }}
+
+
+            <a href="{{ path('reservations_index') }}">Back to the list</a>
+
+
+            {{ form_start(delete_form) }}
+            <div class="form-submit" style="left:100px !important;" >
+                <div class="add-to-cart"> <button type="submit"> Supprimer</button></div>
+            </div>
+
+            {{ form_end(delete_form) }}
+
+</div>
+
+<script>
+    jQuery(document).ready(function() {
+        $('.js-datepicker').datepicker({ format: 'yyyy-dd-mm' });
+    });
+    </script>
+{% endblock %}

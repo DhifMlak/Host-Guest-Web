@@ -1,0 +1,12 @@
+{% extends '@Hostguest/BackEnd/layout.html.twig' %}
+{% block content %}
+<div id="content" class="content">
+<script src="{{asset('js/jquery.min.js')}}" type="text/javascript"></script>
+<script src="{{asset('js/highcharts.js')}}"></script>
+<script src="{{asset('js/exporting.js')}}"></script>
+<script type="text/javascript">
+    {{ chart(chart) }} </script>
+<div id="linechart" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+
+{% endblock  %}
+

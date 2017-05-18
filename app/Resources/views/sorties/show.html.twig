@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Sorty</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Titre</th>
+                <td>{{ sorty.titre }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if sorty.date %}{{ sorty.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Lieu</th>
+                <td>{{ sorty.lieu }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ sorty.description }}</td>
+            </tr>
+            <tr>
+                <th>Nbmax</th>
+                <td>{{ sorty.nbmax }}</td>
+            </tr>
+            <tr>
+                <th>Conditions</th>
+                <td>{{ sorty.conditions }}</td>
+            </tr>
+            <tr>
+                <th>Typesortie</th>
+                <td>{{ sorty.typeSortie }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sorties_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('sorties_edit', { 'id': sorty.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

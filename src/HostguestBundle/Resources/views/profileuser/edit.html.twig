@@ -1,0 +1,53 @@
+{% extends 'HostguestBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row center-block" style="margin-left :10%; margin-bottom: 50px;">
+        <h2> Modifier votre sortie</h2>
+
+        {{ form_start(edit_form,{'action': path('sorties_edit',{'id':id}), 'method': 'POST'}) }}
+
+        <div class="form-item">
+            <label>Titre :</label>
+            {{ form_widget(edit_form.titre) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Date :</label>
+            {{ form_widget(edit_form.date) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Lieu :</label>
+            {{ form_widget(edit_form.lieu) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Description :</label>
+            {{ form_widget(edit_form.description) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Nombre Max :</label>
+            {{ form_widget(edit_form.nbmax) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Conditions :</label>
+            {{ form_widget(edit_form.conditions) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Type Sortie :</label>
+            {{ form_widget(edit_form.typeSortie) }}
+        </div>
+        <br/>
+
+        <div class="form-actions"> <input type="submit" value="Confirmer" /></div>
+        {{ form_end(edit_form) }}
+
+
+
+    </div>
+
+    <hr>
+{% endblock %}

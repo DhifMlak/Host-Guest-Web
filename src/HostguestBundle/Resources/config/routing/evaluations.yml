@@ -1,0 +1,24 @@
+evaluations_index:
+    path:     /
+    defaults: { _controller: "HostguestBundle:Evaluations:index" }
+    methods:  GET
+
+evaluations_show:
+    path:     /{id}/show
+    defaults: { _controller: "HostguestBundle:Evaluations:show" }
+
+evaluations_new:
+    path:     /{id}/new
+    defaults: { _controller: "HostguestBundle:Evaluations:new" }
+
+evaluations_connecte:
+    path:     /{id}/myEval
+    defaults: { _controller: "HostguestBundle:Evaluations:myEval" }
+
+evaluations_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HostguestBundle:Evaluations:edit" }
+
+evaluations_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HostguestBundle:Evaluations:delete" }

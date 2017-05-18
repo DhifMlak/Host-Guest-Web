@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="HostguestBundle\Entity\Evaluations" table="evaluations">
+
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titre" type="string" column="titre" length="50" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="idVoyageur" type="integer" column="idVoyageur" precision="10" scale="0" nullable="false"/>
+    <field name="idOffre" type="integer" column="idOffre" precision="10" scale="0" nullable="false"/>
+    <field name="facility" type="float" column="facility" precision="10" scale="0" nullable="false"/>
+    <field name="service" type="float" column="service" precision="10" scale="0" nullable="false"/>
+    <field name="interesting" type="float" column="interesting" precision="10" scale="0" nullable="false"/>
+    <field name="human" type="float" column="human" precision="10" scale="0" nullable="false"/>
+    <field name="note" type="float" column="note" precision="10" scale="0" nullable="false"/>
+
+    <field name="commentaire" type="string" column="commentaire" length="255" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+
+  </entity>
+</doctrine-mapping>

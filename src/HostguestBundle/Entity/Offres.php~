@@ -1,0 +1,84 @@
+<?php
+
+namespace HostguestBundle\Entity;
+
+/**
+ * Offres
+ */
+class Offres
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $typeOffre;
+
+    /**
+     * @var \HostguestBundle\Entity\Utilisateurs
+     */
+    private $idHote;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set typeOffre
+     *
+     * @param string $typeOffre
+     *
+     * @return Offres
+     */
+    public function setTypeOffre($typeOffre)
+    {
+        $this->typeOffre = $typeOffre;
+
+        return $this;
+    }
+
+    /**
+     * Get typeOffre
+     *
+     * @return string
+     */
+    public function getTypeOffre()
+    {
+        return $this->typeOffre;
+    }
+
+    /**
+     * Set idHote
+     *
+     * @param \HostguestBundle\Entity\Utilisateurs $idHote
+     *
+     * @return Offres
+     */
+    public function setIdHote(\HostguestBundle\Entity\Utilisateurs $idHote = null)
+    {
+        $this->idHote = $idHote;
+
+        return $this;
+    }
+
+    /**
+     * Get idHote
+     *
+     * @return \HostguestBundle\Entity\Utilisateurs
+     */
+    public function getIdHote()
+    {
+        return $this->idHote;
+    }
+
+}

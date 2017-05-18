@@ -1,0 +1,51 @@
+{% extends 'HostguestBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Evaluation</h1>
+
+    <table class="table-bordered">
+            <tr>
+                <td>Titre</td>
+                <td>{{ evaluation.titre }}</td>
+            </tr>
+            <tr>
+                <th>Facility</th>
+                <td>{{ evaluation.facility }}</td>
+            </tr>
+            <tr>
+                <th>Service</th>
+                <td>{{ evaluation.service }}</td>
+            </tr>
+            <tr>
+                <th>Interesting</th>
+                <td>{{ evaluation.interesting }}</td>
+            </tr>
+            <tr>
+                <th>Human</th>
+                <td>{{ evaluation.human }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ evaluation.note }}</td>
+            </tr>
+            <tr>
+                <th>Commentaire</th>
+                <td>{{ evaluation.commentaire }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ evaluation.id }}</td>
+            </tr>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('evaluations_index') }}">Back to the list</a>
+        </li>
+    </ul>
+
+    <br/>
+    <br/>
+    <br/><br/>
+
+{% endblock %}

@@ -1,0 +1,199 @@
+<?php
+
+namespace HostguestBundle\Entity;
+
+/**
+ * Reservations
+ */
+class Reservations
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var integer
+     */
+    private $etat;
+
+    /**
+     * @var integer
+     */
+    private $nbreservation;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+    /**
+     * @var \HostguestBundle\Entity\Offres
+     */
+    private $idOffre;
+
+    /**
+     * @var \HostguestBundle\Entity\Packs
+     */
+    private $idPack;
+
+    /**
+     * @var \HostguestBundle\Entity\Utilisateurs
+     */
+    private $idVoyageur;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set etat
+     *
+     * @param integer $etat
+     *
+     * @return Reservations
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+
+        return $this;
+    }
+
+    /**
+     * Get etat
+     *
+     * @return integer
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * Set nbreservation
+     *
+     * @param integer $nbreservation
+     *
+     * @return Reservations
+     */
+    public function setNbreservation($nbreservation)
+    {
+        $this->nbreservation = $nbreservation;
+
+        return $this;
+    }
+
+    /**
+     * Get nbreservation
+     *
+     * @return integer
+     */
+    public function getNbreservation()
+    {
+        return $this->nbreservation;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Reservations
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set idOffre
+     *
+     * @param \HostguestBundle\Entity\Offres $idOffre
+     *
+     * @return Reservations
+     */
+    public function setIdOffre(\HostguestBundle\Entity\Offres $idOffre = null)
+    {
+        $this->idOffre = $idOffre;
+
+        return $this;
+    }
+
+    /**
+     * Get idOffre
+     *
+     * @return \HostguestBundle\Entity\Offres
+     */
+    public function getIdOffre()
+    {
+        return $this->idOffre;
+    }
+
+    /**
+     * Set idPack
+     *
+     * @param \HostguestBundle\Entity\Packs $idPack
+     *
+     * @return Reservations
+     */
+    public function setIdPack(\HostguestBundle\Entity\Packs $idPack = null)
+    {
+        $this->idPack = $idPack;
+
+        return $this;
+    }
+
+    /**
+     * Get idPack
+     *
+     * @return \HostguestBundle\Entity\Packs
+     */
+    public function getIdPack()
+    {
+        return $this->idPack;
+    }
+
+    /**
+     * Set idVoyageur
+     *
+     * @param \HostguestBundle\Entity\Utilisateurs $idVoyageur
+     *
+     * @return Reservations
+     */
+    public function setIdVoyageur(\HostguestBundle\Entity\Utilisateurs $idVoyageur = null)
+    {
+        $this->idVoyageur = $idVoyageur;
+
+        return $this;
+    }
+
+    /**
+     * Get idVoyageur
+     *
+     * @return \HostguestBundle\Entity\Utilisateurs
+     */
+    public function getIdVoyageur()
+    {
+        return $this->idVoyageur;
+    }
+}

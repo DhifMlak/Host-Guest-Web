@@ -1,0 +1,160 @@
+{% extends "HostguestBundle:Default:Base.html.twig" %}
+
+{% block  container_front %}
+    <section class="awe-parallax category-heading-section-demo">
+        <div class="awe-overlay"></div>
+        <div class="container">
+            <div class="category-heading-content category-heading-content__2 text-uppercase">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><span>Trips</span></li>
+                    </ul>
+                </div>
+                <div class="find">
+                    <h2 class="text-center">Trouver Votre logements</h2>
+                    <form action="{{ path('chercher_logement') }}" method="post">
+                        <div class="form-group">
+                            <div class="form-elements">
+                                <label>      </label>
+                                <div class="form-item"> <input type="hidden"></div>
+                            </div>
+                            <div class="form-elements">
+                                <label>Lieu </label>
+                                <div class="form-item"><i class="awe-icon awe-icon-marker-1"></i> <input type="text" name="ville" id="ville"></div>
+                            </div>
+                            <!--<div class="form-elements">
+                               <label>Date</label>
+                               <div class="form-item"><i class="awe-icon awe-icon-calendar"></i> <input type="text" class="awe-calendar" value="Date"></div>
+                            </div>-->
+
+
+                            <div class="form-actions"><input type="submit" value="Chercher Ma destination"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="filter-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-top"><select class="awe-select">
+                            <option>Best Match</option>
+                            <option>Best Rate</option>
+                        </select></div>
+                </div>
+                <div class="col-md-9 col-md-push-3">
+                    <div class="filter-page__content">
+                        <div class="filter-item-wrapper">
+                            {% for trip in logements %}
+                                <div class="trip-item">
+                                    <div class="item-media">
+                                        <div class="image-cover"><img src="{{ asset('template/FrontEnd/images/trip/1.jpg')}}" alt=""></div>
+                                        <div class="trip-icon"><img src="{{ asset('template/FrontEnd/images/trip.jpg')}}" alt=""></div>
+                                    </div>
+                                    <div class="item-body">
+                                        <div class="item-title">
+
+                                            <h2><a href="{{ path('Detail_logement',{'id': trip.id.id}) }}">{{ trip.titre }}</a></h2>
+                                        </div>
+                                        <div class="item-list">
+                                            <ul>
+                                                <li> {{ trip.titre }} </li>
+                                                <li> {{ trip.adresse }}</li>
+                                                <li> {{ trip.paye }} </li>
+                                                <li> {{ trip.ville  }}</li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="item-footer">
+                                            <div class="item-rate"><span>8.5 Good</span></div>
+                                            <div class="item-icon"><i class="awe-icon awe-icon-gym"></i> <i
+                                                        class="awe-icon awe-icon-car"></i> <i
+                                                        class="awe-icon awe-icon-food"></i> <i
+                                                        class="awe-icon awe-icon-level"></i> <i
+                                                        class="awe-icon awe-icon-wifi"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="item-price-more">
+                                        <div class="price">Prix
+                                            <ins><span class="amount">{{ trip.prix  }} Dt</span></ins>
+
+                                        </div>
+                                        <a href="{{ path('reservations_new',{'idOffre':trip.id.id}) }}" class="awe-btn"> Réserver</a></div>
+
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="page__pagination"><span class="pagination-prev"><i
+                                        class="fa fa-caret-left"></i></span> <span class="current">1</span> <a href="#">2</a> <a
+                                    href="#">3</a> <a href="#">4</a> <a href="#" class="pagination-next"><i
+                                        class="fa fa-caret-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-pull-9">
+                    <div class="page-sidebar">
+                        <div class="sidebar-title"><h2>Trip</h2>
+                            <div class="clear-filter"><a href="#">Clear all</a></div>
+                        </div>
+                        <div class="widget widget_has_radio_checkbox"><h3>Trip Type</h3>
+                            <ul>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Culturelle </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Sportive
+                                    </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Cinéma &amp
+                                    </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i>
+                                        Bar</label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Restaurant </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Shoping</label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i>
+                                        Others</label></li>
+                            </ul>
+                        </div>
+                        <div class="widget widget_price_filter"><h3>Price Level</h3>
+                            <div class="price-slider-wrapper">
+                                <div class="price-slider"></div>
+                                <div class="price_slider_amount">
+                                    <div class="price_label"><span class="from"></span> - <span class="to"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget_has_radio_checkbox"><h3>Star Rating</h3>
+                            <ul>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating">Unrated</span></label></li>
+                            </ul>
+                        </div>
+
+                        <div class="widget widget_product_tag_cloud"><h3>Tags</h3>
+                            <div class="tagcloud"><a href="#">Hotel</a> <a href="#">Motel</a> <a href="#">Hostel</a> <a
+                                        href="#">Homestay</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock  %}

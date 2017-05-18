@@ -1,0 +1,70 @@
+{% extends "HostguestBundle:Front:Layout.html.twig" %}
+{% block  Home_front %}
+    <section class="awe-parallax category-heading-section-demo" style="background-position: 50% -48px;">
+        <div class="awe-overlay"></div>
+        <div class="container">
+            <div class="category-heading-content category-heading-content__2 text-uppercase">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">Accueil</a></li>
+                        <li><span>Reservation</span></li>
+                    </ul>
+                </div>
+                <h3></h3>
+                <br>
+                <h2>Info<a href="#" class="flight-popup-open"><i class="awe-icon awe-icon-info"></i></a></h2>
+            </div>
+        </div>
+        </div>
+
+    </section>
+
+    <div class="booking-info">
+    <h1>Reservation</h1>
+
+    <table class="initiative-table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reservation.id }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ reservation.etat }}</td>
+            </tr>
+            <tr>
+                <th>Nombre de place</th>
+                <td>{{ reservation.nbreservation }}</td>
+            </tr>
+            <tr>
+                <th>Type</th>
+                <td>{{ reservation.type }}</td>
+            </tr>
+            <tr>
+                <th>Datedeb</th>
+                <td>{{ reservation.dateDeb |date('Y-d-m')}}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ reservation.dateFin|date('Y-d-m') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reservations_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reservations_edit', { 'id': reservation.id }) }}">Edit</a>
+        </li>
+
+            {{ form_start(delete_form) }}
+            <div class="form-submit">
+                <div class="add-to-cart"><button type="submit">Supprimer</button></div>
+            </div>
+            {{ form_end(delete_form) }}
+
+    </ul>
+</div>
+{% endblock %}

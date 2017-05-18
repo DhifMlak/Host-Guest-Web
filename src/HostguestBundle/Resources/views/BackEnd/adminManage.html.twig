@@ -1,0 +1,102 @@
+{% extends '@Hostguest/BackEnd/layout.html.twig' %}
+{% block content %}
+    <!-- begin #content -->
+    <div id="content" class="content">
+        <!-- begin breadcrumb -->
+        <ol class="breadcrumb pull-right">
+            <li><a href="javascript:;">Gérer les evaluations </a></li>
+
+        </ol>
+        <!-- end breadcrumb -->
+        <!-- begin page-header -->
+        <h1 class="page-header">Feedback
+            <small>( de tous les utilisateurs )</small>
+        </h1>
+        <!-- end page-header -->
+
+        <!-- begin row -->
+        <div class="row">
+            <!-- begin col-2 -->
+
+            <!-- end col-2 -->
+            <!-- begin col-10 -->
+            <div class="col-md-10">
+                <!-- begin panel -->
+                <div class="panel panel-inverse">
+                    <div class="panel-heading">
+                        <div class="panel-heading-btn">
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default"
+                               data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success"
+                               data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning"
+                               data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                            <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger"
+                               data-click="panel-remove"><i class="fa fa-times"></i></a>
+                        </div>
+                        <h4 class="panel-title"> Les Evaluations : </h4>
+                    </div>
+                    <div class="alert alert-warning fade in">
+                        <button type="button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        The Buttons extension for DataTables provides a common set of options, API methods and styling
+                        to display buttons on a page that will interact with a DataTable. The core library provides the
+                        based framework upon which plug-ins can built.
+                    </div>
+                    <div class="panel-body">
+                        <table id="data-table" class="table table-striped table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Note</th>
+                                <th>Commentaire</th>
+                                <th>Facility</th>
+                                <th>Service</th>
+                                <th>Interesting</th>
+                                <th>Human</th>
+                                <th>Sortie</th>
+                                <th>Action 1</th>
+                                <th>Action 2</th>
+
+                                <!-- <th>Action</th> -->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for e in eva  %}
+
+                            <tr class="odd gradeX">
+                                <td>{{ e.titre }}</td>
+                                <td>{{ e.note }}</td>
+                                <td>{{ e.commentaire }}</td>
+                                <td>{{ e.facility }}</td>
+                                <td>{{ e.service}}</td>
+                                <td>{{ e.interesting }}</td>
+                                <td>{{ e.human }}</td>
+                                <td>{{ e.interesting }}</td>
+
+
+
+
+                                <td><a href="{{ path('hostguest_admin_sortie_delete',{'id':e.id}) }}" class="btn btn-danger m-r-5 m-b-5">Supprimer</a></td>
+                                <td><a href="{{ path('hostguest_admin_BannerClient',{'id':e.idVoyageur}) }}" class="btn btn-danger m-r-5 m-b-5">Banner</a></td>
+
+
+
+
+
+
+                            </tr>
+
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end panel -->
+            </div>
+            <!-- end col-10 -->
+        </div>
+        <!-- end row -->
+    </div>
+{% endblock %}

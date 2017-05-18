@@ -1,0 +1,63 @@
+{% extends "HostguestBundle:Front:home.html.twig" %}
+{% block content %}
+<section class="filter-page">
+
+    </div>
+
+
+    <section class="your-destinations-section-demo">
+        <div class="container">
+            <div class="your-destinations">
+                <!-- Formulaire d'ajout -->
+
+                <div class="checkout-page__content">
+                    <div class="customer-content">
+                        <!-- <div class="destination-list__content">-->
+                        <form action="{{ path('AjouterRando') }}" method="post" >
+                        <div class="woocommerce-billing-fields">
+
+                            <h3>Ajouter Randonnée</h3>
+
+                            <div class="shipping_address">
+
+
+
+
+                                <div class="form-row" id="shipping_address_1_field"><label>Titre</label><input name="titre" id="titre" type="text" required></div>
+                                <div class="form-row" id="shipping_city_field"><label>Lieu Randonnée</label><input name="lieu" id="lieu" type="text" required></div>
+                                <div class="form-row" id="shipping_state_field"><label>Nombre Max</label><input name="nbMax" id="nbMax" type="number" required></div>
+
+                                <div class="form-row" id="shipping_address_1_field"><label>Lieu de rencontre</label><input name="lieuRencontre" id="lieuRencontre" type="text" required></div>
+                                <div class="form-row" id="shipping_postcode_field"><label>Prix</label><input name="prix" id="prix" type="number"></div>
+                                <div class="form-row" id="shipping_phone_field"><label>Heure de Roncontre</label><input name="heureRencontre" id="heureRencontre" type="time" required></div>
+
+
+                                <div class="form-row" id="order_comments_field"><label>Description</label><textarea name="description" id="description" required></textarea></div><br>
+                                <!--<div class="form-row" id="order_comments_field"><label>Description</label><input name="photo" id="photo" type="file"></div><br>-->
+
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div id="payment"><div class="form-row place-order"><input type="submit" class="button alt" id="place_order" value="Ajouter"></div></div>
+                        </form>
+
+
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+    </div>
+    </div>
+</section>
+{% endblock content %}

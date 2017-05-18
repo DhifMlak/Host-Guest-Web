@@ -1,0 +1,170 @@
+<?php
+
+namespace HostguestBundle\Entity;
+
+/**
+ * Evaluations
+ */
+class Evaluations
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $titre;
+
+    /**
+     * @var float
+     */
+    private $note;
+
+    /**
+     * @var string
+     */
+    private $commentaire;
+
+    /**
+     * @var \HostguestBundle\Entity\Offres
+     */
+    private $idOffre;
+
+    /**
+     * @var \HostguestBundle\Entity\Utilisateurs
+     */
+    private $idVoyageur;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     *
+     * @return Evaluations
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set note
+     *
+     * @param float $note
+     *
+     * @return Evaluations
+     */
+    public function setNote($note)
+    {
+        $this->note = $note;
+
+        return $this;
+    }
+
+    /**
+     * Get note
+     *
+     * @return float
+     */
+    public function getNote()
+    {
+        return $this->note;
+    }
+
+    /**
+     * Set commentaire
+     *
+     * @param string $commentaire
+     *
+     * @return Evaluations
+     */
+    public function setCommentaire($commentaire)
+    {
+        $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    /**
+     * Get commentaire
+     *
+     * @return string
+     */
+    public function getCommentaire()
+    {
+        return $this->commentaire;
+    }
+
+    /**
+     * Set idOffre
+     *
+     * @param \HostguestBundle\Entity\Offres $idOffre
+     *
+     * @return Evaluations
+     */
+    public function setIdOffre(\HostguestBundle\Entity\Offres $idOffre = null)
+    {
+        $this->idOffre = $idOffre;
+
+        return $this;
+    }
+
+    /**
+     * Get idOffre
+     *
+     * @return \HostguestBundle\Entity\Offres
+     */
+    public function getIdOffre()
+    {
+        return $this->idOffre;
+    }
+
+    /**
+     * Set idVoyageur
+     *
+     * @param \HostguestBundle\Entity\Utilisateurs $idVoyageur
+     *
+     * @return Evaluations
+     */
+    public function setIdVoyageur(\HostguestBundle\Entity\Utilisateurs $idVoyageur = null)
+    {
+        $this->idVoyageur = $idVoyageur;
+
+        return $this;
+    }
+
+    /**
+     * Get idVoyageur
+     *
+     * @return \HostguestBundle\Entity\Utilisateurs
+     */
+    public function getIdVoyageur()
+    {
+        return $this->idVoyageur;
+    }
+}

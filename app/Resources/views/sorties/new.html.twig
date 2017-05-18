@@ -1,0 +1,51 @@
+{% extends 'HostguestBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row center-block" style="margin-left :10%; margin-bottom: 50px;">
+    <h2>Proposer une sortie :</h2>
+
+    {{ form_start(form) }}
+
+        <div class="form-item">
+            <label>Titre :</label>
+            {{ form_widget(form.titre) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label> Date :</label>
+            {{ form_widget(form.date) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Lieu   :</label>
+            {{ form_widget(form.lieu) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Description :</label>
+            {{ form_widget(form.description) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Nombre Max :</label>
+            {{ form_widget(form.nbmax) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Conditions :</label>
+            {{ form_widget(form.conditions) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Type Sortie :</label>
+            {{ form_widget(form.typeSortie) }}
+        </div>
+        <br/>
+
+<div class="form-actions"> <input type="submit" value="Ajouter" /></div>
+    {{ form_end(form) }}
+
+    </div>
+
+    <hr>
+{% endblock %}

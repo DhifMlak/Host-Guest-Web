@@ -1,0 +1,49 @@
+{% extends 'HostguestBundle::layout.html.twig' %}
+
+{% block content %}
+    <h1>Sorties list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Date</th>
+                <th>Lieu</th>
+                <th>Description</th>
+                <th>Nbmax</th>
+                <th>Conditions</th>
+                <th>Typesortie</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for sorty in sorties %}
+            <tr>
+                <td><a href="{{ path('sorties_show', { 'id': sorty.id.id }) }}">{{ sorty.titre }}</a></td>
+                <td>{% if sorty.date %}{{ sorty.date|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ sorty.lieu }}</td>
+                <td>{{ sorty.description }}</td>
+                <td>{{ sorty.nbmax }}</td>
+                <td>{{ sorty.conditions }}</td>
+                <td>{{ sorty.typeSortie }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('sorties_show', { 'id': sorty.id.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('sorties_edit', { 'id': sorty.id.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('sorties_new') }}">Create a new sorty</a>
+        </li>
+    </ul>
+{% endblock %}

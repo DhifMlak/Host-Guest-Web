@@ -1,0 +1,208 @@
+{% extends "HostguestBundle:Front:home.html.twig" %}
+{% block content %}
+    <section class="awe-parallax category-heading-section-demo">
+        <div class="awe-overlay"></div>
+        <div class="container">
+            <div class="category-heading-content category-heading-content__2 text-uppercase">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><span>Trips</span></li>
+                    </ul>
+                </div>
+                <div class="find">
+                    <h2 class="text-center">Trouver Votre Randonnée</h2>
+                    <form action="{{ path('ChercherMesRando') }}" method="post">
+                        <div class="form-group">
+                            <div class="form-elements">
+                                <label>      </label>
+                                <div class="form-item"> <input type="hidden"></div>
+                            </div>
+                            <div class="form-elements">
+                                <label>Lieu </label>
+                                <div class="form-item"><i class="awe-icon awe-icon-marker-1"></i> <input type="text" name="lieu" id="lieu"></div>
+                            </div>
+                            <!--<div class="form-elements">
+                               <label>Date</label>
+                               <div class="form-item"><i class="awe-icon awe-icon-calendar"></i> <input type="text" class="awe-calendar" value="Date"></div>
+                            </div>-->
+
+
+                            <div class="form-actions"><input type="submit" value="Chercher Ma destination"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="filter-page">
+        <div class="container">
+            <div class="row">
+
+                <section class="your-destinations-section-demo">
+                    <div class="container">
+                        <div class="your-destinations">
+                            <div class="your-destionations__top">
+                                <div class="title">
+                                    <h2>Mes Randonnées</h2>
+                                </div>
+                                <div class="your-destinations__bar">
+
+                                </div>
+                            </div>
+
+                            {% for key in randos%}
+                                {% for r in key %}
+
+                                <div class="destination-list__content">
+                                    <div class="destinations-item">
+                                        <div class="item-media">
+                                            <div class="image-cover"><img src={{ asset('template/FrontEnd/images/img/2.jpg') }}alt=""></div>
+                                            <div class="item-cat">
+                                                <ul>
+                                                    <li><a href="#">Italy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item-body">
+                                            <div class="item-title">
+
+                                                <h2><a href="{{ path('DetailRando',{'id': r.id.id}) }} ">{{ r.Titre }}</a></h2>
+                                            </div>
+                                            <div class="item-description">
+                                                <p>   </p>
+                                            </div>
+                                            <div class="item-footer">
+                                                <ul>
+                                                    <li>
+                                                        <h6>Max Personne</h6>
+                                                        <p><i class="awe-icon awe-icon-users"></i> <span class="count">{{ r.Nbmax }}</span></p>
+                                                    </li>
+                                                    <li>
+                                                        <h6>Lieu </h6>
+                                                        <p><i class="awe-icon awe-icon-marker-1"></i> <span class="count">{{ r.Lieu }}</span></p>
+                                                    </li>
+                                                    <li>
+                                                        <h6>Heure de rencontre</h6>
+                                                        <p><i class="fa fa-clock-o"></i> <span class="count">{{ r.HeureRencontre }}</span></p>
+                                                    </li>
+                                                    <li>
+                                                        <h6>Prix</h6>
+                                                        <p> <span class="count">{{ r.Prix }} Dt</span></p>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item-price-more">
+                                            <div class="price"><span class="amount">
+                                                     <button type="button" class="awe-btn" data-toggle="modal" data-target="#ModalEdit"> Modifer </button>
+                                                </span>
+                                            </div><br>
+                                            <div class="price"><span class="amount">
+                                                    <button type="button" class="awe-btn" data-toggle="modal" data-target="#ModalDelete"> Supprimer </button>
+                                                </span>
+                                            </div><br>
+                                           <br>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="relationLabel" aria-hidden="true">
+                                        <div class="modal-dialog ">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="relationLabel">Modification</h4>
+                                                </div>
+                                                <form id="editform" name="editform" action="{{ path('ModifierRando',{'id': r.id.id}) }}" method="post">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="recipient-name" class="control-label">Titre</label>
+                                                            <input type="text" class="form-control" id="titre" name="titre" value="{{ r.Titre }}"required>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <div class="row">
+
+                                                                <div class="col-md-6">
+                                                                    <label for="lieu" class="control-label">Lieu de Rondonnée</label>
+                                                                    <input name="lieu" id="lieu" type="text" class="form-control" value="{{ r.Lieu }}"required>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="lieuRencontre" class="control-label">Rendez Vous à</label>
+                                                                    <input name="lieuRencontre" id="lieuRencontre" class="form-control" type="text" value="{{ r.LieuRencontre }}"required>
+                                                                </div>
+                                                            </div>
+
+
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <label for="nbMax" class="control-label">Nombre Max</label>
+                                                                    <input name="nbMax" id="nbMax" class="form-control" type="number" value="{{ r.Nbmax }}" required>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <label for="prix" class="control-label">Prix</label>
+                                                                    <input name="prix" id="prix" class="form-control" type="number" value="{{ r.Prix }}" required>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="description" class="control-label">Description</label>
+                                                            <textarea name="description" class="form-control"  id="description" required> {{ r.Description }}</textarea>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" onclick='' data-dismiss="modal">Annuler</button>
+                                                        <button type="submit" class="btn btn-success" onclick=''>Modifier</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal -->
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="ModalDelete" tabindex="-1" role="dialog" aria-labelledby="relationLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                    <h4 class="modal-title" id="relationLabel">Suppression</h4>
+                                                </div>
+                                                <form id="delform" name="delform" action="{{ path('SupprimerRando',{'id': r.id.id}) }}" method="post">
+                                                    <div class="modal-body">
+                                                        <h7>Etes vous sur de vouloir supprimer cette randonnée ?</h7>
+
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-default" onclick='' data-dismiss="modal">Annuler</button>
+                                                        <button type="submit" class="btn btn-success" onclick=''>Supprimer</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal -->
+                                {% endfor %}
+
+                            {% endfor %}
+                            <div class="page__pagination text-center"><span class="pagination-prev"><i class="fa fa-caret-left"></i></span> <span class="current">1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#" class="pagination-next"><i class="fa fa-caret-right"></i></a></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+{% endblock content %}

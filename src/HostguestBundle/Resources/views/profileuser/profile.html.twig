@@ -1,0 +1,68 @@
+{% extends '@Hostguest/layout.html.twig' %}
+
+{% block content %}
+    <section class="your-destinations-section-demo">
+        <div class="container">
+            <div class="your-destinations">
+                <div class="your-destionations__top">
+                    <div class="title"><h2> Gestion de mes sorties:
+                        </h2></div>
+
+                    <li> <a href="{{ path('sorties_new') }}" class="awe-btn btn-default"> Proposer une sortie </a> </li>
+                    <div class="your-destinations__bar">
+                        <div class="view-switcher">
+                            <div class="view-item view-active"><a href="destinations-list.html"><i
+                                            class="awe-icon awe-icon-list"></i></a></div>
+                            <div class="view-item"><a href="destinations-grid.html"><i
+                                            class="awe-icon awe-icon-grid"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-list__content">
+                    {% for sortie in sorties %}
+                    <div class="destinations-item">
+                        <div class="item-media">
+                            <div class="image-cover"><img src="{{asset('images/img/2.jpg')}}" alt=""></div>
+                            <div class="item-cat">
+                                <ul>
+                                    <li><a href="#"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-body">
+                            <div class="item-title"><h2><a href="{{ path('sorties_show',{'id':sortie.id.id}) }}">{{ sortie.titre }}</a></h2></div>
+                            <div> <p><i class="awe-icon awe-icon-hotel"></i> <span class="count">{{ sortie.date |date("d/m/Y") }}</span></p> </div>
+                            <div class="item-description"><p> {{ sortie.description }}</p></div>
+                            <div class="item-footer">
+                                <ul>
+                                    <li><h6>Lieu</h6>
+                                        <p><i class="awe-icon awe-icon-plane"></i> <span class="count">{{ sortie.lieu }}</span></p>
+                                    </li>
+                                    <li><h6>Nombre max</h6>
+                                        <p><i class="awe-icon awe-icon-train"></i> <span class="count">{{ sortie.nbmax }}</span></p>
+                                    </li>
+                                    <li><h6>Conditions</h6>
+                                        <p><i class="awe-icon awe-icon-hotel"></i> <span class="count">{{ sortie.conditions }}</span></p>
+                                    </li>
+                                    <li><h6>Type sortie</h6>
+                                        <p><i class="awe-icon awe-icon-attraction"></i> <span class="count">{{ sortie.typeSortie }}</span>
+                                        </p></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="item-price-more">
+                            <div class="price">Prix sortie <span class="amount">20Dt</span></div>
+                            <a href="{{ path('hostguest_trip_delete',{'id':sortie.id.id}) }}" class="awe-btn">Supprimer</a> <a href="{{ path('hostguest_trip_edit',{'id':sortie.id.id}) }}" class="awe-btn">Modifier</a></div>
+
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="page__pagination text-center"><span class="pagination-prev"><i class="fa fa-caret-left"></i></span>
+                    <span class="current">1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#"
+                                                                                                            class="pagination-next"><i
+                                class="fa fa-caret-right"></i></a></div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

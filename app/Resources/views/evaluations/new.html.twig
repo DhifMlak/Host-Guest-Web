@@ -1,0 +1,46 @@
+{% extends 'HostguestBundle::layout.html.twig' %}
+
+{% block content %}
+    <div class="row center-block" style="margin-left :10%; margin-bottom: 50px;">
+        <h2>Evaluer une sortie :</h2>
+
+        {{ form_start(form, { attr: {novalidate: 'novalidate'} }) }}
+
+        <div class="form-item">
+            <label>Titre :</label>
+            {{ form_widget(form.titre) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label> Commentaire :</label>
+            {{ form_widget(form.commentaire) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>facility   :</label>
+            {{ form_widget(form.facility) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label>Service :</label>
+            {{ form_widget(form.service) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label> Interesting :</label>
+            {{ form_widget(form.interesting) }}
+        </div>
+        <br/>
+        <div class="form-item">
+            <label> Human :</label>
+            {{ form_widget(form.human) }}
+        </div>
+        <br/>
+
+        <div class="form-actions"> <input type="submit" value="Ajouter" /></div>
+        {{ form_end(form) }}
+
+    </div>
+
+    <hr>
+{% endblock %}

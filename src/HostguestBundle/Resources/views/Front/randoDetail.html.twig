@@ -1,0 +1,319 @@
+{% extends "HostguestBundle:Front:home.html.twig" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="product-detail__info">
+                <div class="product-title">
+                    <h2>{{ rando.titre }}</h2>
+                </div>
+
+                <div class="product-email"><i class="fa fa-envelope"></i> <a href="#">Send Email Inquiry</a></div>
+                <div class="trips">
+                    <div class="item">
+                        <h6>Randonnée à</h6>
+                        <p><i class="fa fa-2x fa-dot-circle-o"></i>{{ rando.lieu }}</p>
+                    </div>
+                    <div class="item">
+                        <h6>Nombre Max</h6>
+                        <p><i class="awe-icon awe-icon-users"></i>{{ rando.nbmax }}</p>
+                    </div>
+                    <div class="item">
+                        <h6>Prix</h6>
+                        <p>{{ rando.prix }} Dt</p>
+                    </div>
+                    <div class="item">
+                        <h6>Temp de rencontre</h6>
+                        <p><i class="fa fa-clock-o"></i>{{ rando.heureRencontre }}</p>
+                    </div>
+                    <div class="item">
+                        <h6>Lieu de rencontre</h6>
+                        <p><i class="awe-icon awe-icon-marker-1"></i>{{ rando.lieuRencontre }}</p>
+                    </div>
+
+                </div>
+                <!-- place du tab supprimé-->
+                <!--<div>
+                            <div class="tour-map-wrapper">
+                               <div class="tour-map">
+                                  <div data-latlong="21.036697, 105.834871"></div>
+                               </div>
+                               <div class="trips">
+                                  <div class="item">
+                                     <h6>Sights and Stops</h6>
+                                     <p><i class="awe-icon awe-icon-attraction"></i>26</p>
+                                  </div>
+                                  <div class="item">
+                                     <h6>Time length</h6>
+                                     <p><i class="fa fa-clock-o"></i>2 hours</p>
+                                  </div>
+                               </div>
+                               <br>
+
+                            </div>
+
+
+
+                 </div>-->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="product-detail__gallery">
+                <div class="product-slider-wrapper">
+                    <div class="product-slider">
+
+                        <<div class="item"><img src={{ asset('template/FrontEnd/images/img/1.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/2.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/3.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/4.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/5.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/6.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/7.jpg') }}alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/8.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/9.jpg') }} alt=""></div>
+                        <div class="item"><img src={{ asset('template/FrontEnd/images/img/10.jpg') }} alt=""></div>
+                    </div>
+                    <div class="product-slider-thumb-row">
+                        <div class="product-slider-thumb">
+                            <div class="item"><img src="images/img/demo-thumb-1.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-2.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-3.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-4.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-5.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-1.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-2.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-3.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-4.jpg" alt=""></div>
+                            <div class="item"><img src="images/img/demo-thumb-5.jpg" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div class="col-md-6">
+            <div class="col-xs-12">
+                <h5 class="text-uppercase">Description</h5>
+                <blockquote>
+                    <p>{{ rando.description }}</p>
+                    <footer>Awethemes</footer>
+                </blockquote>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <div>
+                <div class="tour-map-wrapper">
+                    <div class="tour-map">
+                        <div data-latlong="21.036697, 105.834871"></div>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="product-tabs tabs">
+                <ul>
+                    <li><a href="#tabs-3">Review &amp; rating</a></li>
+                </ul>
+                <div class="product-tabs__content">
+
+
+                    <div id="tabs-3">
+                        <div id="reviews">
+                            <div class="rating-info">
+                                <div class="average-rating-review good"><span class="count">7.5</span> <em>Average rating</em> <span>Good</span></div>
+                                <ul class="rating-review">
+                                    <li><em>Facility</em> <span>7.5</span></li>
+                                    <li><em>Human</em> <span>9.0</span></li>
+                                    <li><em>Service</em> <span>9.5</span></li>
+                                    <li><em>Interesting</em> <span>8.7</span></li>
+                                </ul>
+                                <a href="#" class="write-review">Write a review</a>
+                            </div>
+                            <div id="add_review">
+                                <h3 class="comment-reply-title">Add a review</h3>
+                                <form>
+                                    <div class="comment-form-author"><label for="author">Name <span class="required">*</span></label><input id="author" type="text"></div>
+                                    <div class="comment-form-email"><label for="email">Email <span class="required">*</span></label><input id="email" type="text"></div>
+                                    <div class="comment-form-rating">
+                                        <h4>Your Rating</h4>
+                                        <div class="comment-form-rating__content">
+                                            <div class="item facility">
+                                                <label>Facility</label>
+                                                <select class="awe-select">
+                                                    <option>5.0</option>
+                                                    <option>6.5</option>
+                                                    <option>7.5</option>
+                                                    <option>8.5</option>
+                                                    <option>9.0</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="item human">
+                                                <label>Human</label>
+                                                <select class="awe-select">
+                                                    <option>5.0</option>
+                                                    <option>6.5</option>
+                                                    <option>7.5</option>
+                                                    <option>8.5</option>
+                                                    <option>9.0</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="item service">
+                                                <label>Service</label>
+                                                <select class="awe-select">
+                                                    <option>5.0</option>
+                                                    <option>6.5</option>
+                                                    <option>7.5</option>
+                                                    <option>8.5</option>
+                                                    <option>9.0</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                            <div class="item interesting">
+                                                <label>Interesting</label>
+                                                <select class="awe-select">
+                                                    <option>5.0</option>
+                                                    <option>6.5</option>
+                                                    <option>7.5</option>
+                                                    <option>8.5</option>
+                                                    <option>9.0</option>
+                                                    <option>10</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="comment-form-comment"><label for="comment">Your Review</label><textarea id="comment"></textarea></div>
+                                    <div class="form-submit"><input type="submit" class="submit" value="Submit"></div>
+                                </form>
+                            </div>
+                            <div id="comments">
+                                <ol class="commentlist">
+                                    <li>
+                                        <div class="comment-box">
+                                            <div class="avatar"><img src="images/img/demo-thumb.jpg" alt=""></div>
+                                            <div class="comment-body">
+                                                <p class="meta"><strong>Nguyen Gallahendahry</strong> <span class="time">December 10, 2012</span></p>
+                                                <div class="description">
+                                                    <p>Takes me back to my youth. I love the design of this soda machine. A bit pricy though..!</p>
+                                                </div>
+                                                <div class="rating-info">
+                                                    <div class="average-rating-review good"><span class="count">7.5</span> <em>Average rating</em> <span>Good</span></div>
+                                                    <ul class="rating-review">
+                                                        <li><em>Facility</em> <span>7.5</span></li>
+                                                        <li><em>Human</em> <span>9.0</span></li>
+                                                        <li><em>Service</em> <span>9.5</span></li>
+                                                        <li><em>Interesting</em> <span>8.7</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="comment-box">
+                                            <div class="avatar"><img src="images/img/demo-thumb.jpg" alt=""></div>
+                                            <div class="comment-body">
+                                                <p class="meta"><strong>James Bond not 007</strong> <span class="time">December 10, 2012</span></p>
+                                                <div class="description">
+                                                    <p>Takes me back to my youth. I love the design of this soda machine. A bit pricy though..!</p>
+                                                </div>
+                                                <div class="rating-info">
+                                                    <div class="average-rating-review good"><span class="count">7.5</span> <em>Average rating</em> <span>Good</span></div>
+                                                    <ul class="rating-review">
+                                                        <li><em>Facility</em> <span>7.5</span></li>
+                                                        <li><em>Human</em> <span>9.0</span></li>
+                                                        <li><em>Service</em> <span>9.5</span></li>
+                                                        <li><em>Interesting</em> <span>8.7</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="comment-box">
+                                            <div class="avatar"><img src="images/img/demo-thumb.jpg" alt=""></div>
+                                            <div class="comment-body">
+                                                <p class="meta"><strong>Bratt not Pitt</strong> <span class="time">December 10, 2012</span></p>
+                                                <div class="description">
+                                                    <p>Takes me back to my youth. I love the design of this soda machine. A bit pricy though..!</p>
+                                                </div>
+                                                <div class="rating-info">
+                                                    <div class="average-rating-review fine"><span class="count">5.0</span> <em>Average rating</em> <span>Fine</span></div>
+                                                    <ul class="rating-review">
+                                                        <li><em>Facility</em> <span>7.5</span></li>
+                                                        <li><em>Human</em> <span>9.0</span></li>
+                                                        <li><em>Service</em> <span>9.5</span></li>
+                                                        <li><em>Interesting</em> <span>8.7</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="detail-sidebar">
+
+                <div class="booking-info">
+                    <h3>Booking info</h3>
+                    <div class="form-select-date">
+                        <div class="form-elements">
+                            <label>Select Travel Date</label>
+                            <div class="form-item"><i class="awe-icon awe-icon-calendar"></i> <input type="text" class="awe-calendar" value="Date"></div>
+                            <span>* Vouchers valid for 12 months after purchase.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-elements form-adult">
+                            <label>Adult</label>
+                            <div class="form-item">
+                                <select class="awe-select">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                            <span>12 yo and above</span>
+                        </div>
+                        <div class="form-elements form-kids">
+                            <label>Kids</label>
+                            <div class="form-item">
+                                <select class="awe-select">
+                                    <option>0</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                            <span>11 and under</span>
+                        </div>
+                    </div>
+                    <div class="price"><em>Total for this booking</em> <span class="amount">$5,923</span></div>
+                    <div class="form-submit">
+                        <div class="add-to-cart"><button type="submit"><i class="awe-icon awe-icon-cart"></i>Add this to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

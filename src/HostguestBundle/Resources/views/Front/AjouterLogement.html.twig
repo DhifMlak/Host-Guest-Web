@@ -1,0 +1,85 @@
+{% extends "HostguestBundle:Default:Base.html.twig" %}
+{% block  container_front %}
+    <div >
+<h1>Ajouter logements</h1>
+
+
+            {{ form_start(form) }}
+
+            <div class="col-xs-3">
+                {{ form_label(form.titre) }}
+                {{ form_widget(form.titre, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.titre) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.adresse) }}
+                {{ form_widget(form.adresse, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.adresse) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.ville) }}
+                {{ form_widget(form.ville, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.ville) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.paye) }}
+                {{ form_widget(form.paye, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.paye) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.prix) }}
+                {{ form_widget(form.prix, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.prix) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.type) }}
+                {{ form_widget(form.type, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.type) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.internet) }}
+                {{ form_widget(form.internet, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.internet) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.parking) }}
+                {{ form_widget(form.parking, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.parking) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.cableTv) }}
+                {{ form_widget(form.cableTv, { 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.cableTv) }}
+            </div>
+
+            <div class="col-xs-3">
+                {{ form_label(form.piscine) }}
+                {{ form_widget(form.piscine,{ 'attr': { 'class': 'form-control' } }) }}
+                {{ form_errors(form.piscine) }}
+            </div>
+
+
+
+
+            <div class="col-xs-3">
+                {{ form_widget(form.save) }}
+            </div>
+
+
+
+{{ form_end(form) }}
+
+
+    </div>
+
+
+
+{% endblock  %}

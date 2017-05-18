@@ -1,0 +1,108 @@
+{% extends "HostguestBundle:Front:home.html.twig" %}
+{% block content %}
+    <section class="awe-parallax category-heading-section-demo">
+        <div class="awe-overlay"></div>
+        <div class="container">
+            <div class="category-heading-content category-heading-content__2 text-uppercase">
+                <div class="breadcrumb">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><span>Trips</span></li>
+                    </ul>
+                </div>
+                <div class="find">
+                    <h2 class="text-center">Trouver Votre Randonnée</h2>
+                    <form action="{{ path('ChercherRando') }}" method="post">
+                        <div class="form-group">
+                            <div class="form-elements">
+                                <label>      </label>
+                                <div class="form-item"> <input type="hidden"></div>
+                            </div>
+                            <div class="form-elements">
+                                <label>Lieu </label>
+                                <div class="form-item"><i class="awe-icon awe-icon-marker-1"></i> <input type="text" name="lieu" id="lieu"></div>
+                            </div>
+                            <!--<div class="form-elements">
+                               <label>Date</label>
+                               <div class="form-item"><i class="awe-icon awe-icon-calendar"></i> <input type="text" class="awe-calendar" value="Date"></div>
+                            </div>-->
+
+
+                            <div class="form-actions"><input type="submit" value="Chercher Ma destination"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="filter-page">
+        <div class="container">
+            <div class="row">
+
+                <section class="your-destinations-section-demo">
+                    <div class="container">
+                        <div class="your-destinations">
+                            <div class="your-destionations__top">
+                                <div class="title">
+                                    <h2>Votre Randonnée</h2>
+                                </div>
+                                <div class="your-destinations__bar">
+
+                                </div>
+                            </div>
+                    {% for r in randos %}
+                            <div class="destination-list__content">
+                                <div class="destinations-item">
+                                    <div class="item-media">
+                                        <div class="image-cover"><img src={{ asset('template/FrontEnd/images/img/2.jpg') }}alt=""></div>
+                                        <div class="item-cat">
+                                            <ul>
+                                                <li><a href="#">Italy</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item-body">
+                                        <div class="item-title">
+
+                                          <h2><a href="{{ path('DetailRando',{'id': r.id.id}) }}">{{ r.Titre }}</a></h2>
+                                        </div>
+                                        <div class="item-description">
+                                            <p>   </p>
+                                        </div>
+                                        <div class="item-footer">
+                                            <ul>
+                                                <li>
+                                                    <h6>Max Personne</h6>
+                                                    <p><i class="awe-icon awe-icon-users"></i> <span class="count">{{ r.Nbmax }}</span></p>
+                                                </li>
+                                                <li>
+                                                    <h6>Lieu </h6>
+                                                    <p><i class="awe-icon awe-icon-marker-1"></i> <span class="count">{{ r.Lieu }}</span></p>
+                                                </li>
+                                                <li>
+                                                    <h6>Heure de rencontre</h6>
+                                                    <p><i class="fa fa-clock-o"></i> <span class="count">{{ r.HeureRencontre }}</span></p>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="item-price-more">
+                                        <div class="price"> <span class="amount">{{ r.Prix }} Dt</span>Par Personne</div>
+                                        <a href="{{ path('DetailRando',{'id': r.id.id}) }}" class="awe-btn">Détails</a>
+                                        <a href="{{ path('reservations_new',{'idOffre':r.id.id}) }}" class="awe-btn"> Réserver</a></div>
+
+                                </div>
+                                </div>
+
+                            </div>
+                        {% endfor %}
+                            <div class="page__pagination text-center"><span class="pagination-prev"><i class="fa fa-caret-left"></i></span> <span class="current">1</span> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> <a href="#" class="pagination-next"><i class="fa fa-caret-right"></i></a></div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </section>
+{% endblock content %}

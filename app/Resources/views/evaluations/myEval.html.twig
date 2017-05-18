@@ -1,0 +1,122 @@
+{% extends '@Hostguest/layout.html.twig' %}
+{% block content %}
+    <section class="filter-page">
+        <div class="container">
+            <hr/>
+            <div class="row">
+                <ul class="list-inline">
+
+                </ul>
+
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-top"><select class="awe-select">
+                            <option>Best Match</option>
+                            <option>Best Rate</option>
+                        </select></div>
+                </div>
+                <div class="col-md-9 col-md-push-3">
+                    <div class="filter-page__content">
+                        <div class="filter-item-wrapper">
+                            {% for evaluation in evaluations %}
+                                <div class="trip-item">
+                                    <div class="item-media">
+                                        <div class="image-cover"><img src="{{ asset('template/FrontEnd/images/trip/1.jpg')}}" alt=""></div>
+                                        <div class="trip-icon"><img src="{{ asset('template/FrontEnd/images/trip.jpg')}}" alt=""></div>
+                                    </div>
+                                    <div class="item-body">
+                                        <div class="item-title"><h2><a href="{{ path('evaluations_show', { 'id': evaluation.id }) }}">{{ evaluation.titre }}</a></h2>
+                                        </div>
+                                        <div class="item-list">
+                                            <ul>
+                                                <li>facility {{ evaluation.facility }} </li>
+                                                <li> service{{ evaluation.service }}</li>
+                                                <li> interesting{{ evaluation.interesting  }} </li>
+                                                <li> human{{ evaluation.human  }}</li>
+                                                <li> note{{ evaluation.note   }}</li>
+                                                <li> commentaire{{ evaluation.commentaire    }}</li>
+                                            </ul>
+                                        </div>
+                                        <div class="item-footer">
+                                            <div class="item-rate"><span>8.5 Good</span></div>
+                                            <div class="item-icon"><i class="awe-icon awe-icon-gym"></i> <i
+                                                        class="awe-icon awe-icon-car"></i> <i
+                                                        class="awe-icon awe-icon-food"></i> <i
+                                                        class="awe-icon awe-icon-level"></i> <i
+                                                        class="awe-icon awe-icon-wifi"></i></div>
+                                        </div>
+                                    </div>
+                                    <div class="item-price-more">
+                                        <div class="price">Prix ticket
+                                            <ins><span class="amount">15Dt</span></ins>
+                                            <del><span class="amount">15Dt</span></del>
+                                        </div>
+
+                                        <a href="{{ path('evaluations_edit', { 'id': evaluation.id }) }}" class="awe-btn"> Edit</a></div>
+
+
+                                </div>
+                            {% endfor %}
+                        </div>
+                        <div class="page__pagination"><span class="pagination-prev"><i
+                                        class="fa fa-caret-left"></i></span> <span class="current">1</span> <a href="#">2</a> <a
+                                    href="#">3</a> <a href="#">4</a> <a href="#" class="pagination-next"><i
+                                        class="fa fa-caret-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-pull-9">
+                    <div class="page-sidebar">
+                        <div class="sidebar-title"><h2>Trip</h2>
+                            <div class="clear-filter"><a href="#">Clear all</a></div>
+                        </div>
+                        <div class="widget widget_has_radio_checkbox"><h3>Trip Type</h3>
+                            <ul>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Culturelle </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Sportive
+                                    </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Cinéma &amp
+                                    </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i>
+                                        Bar</label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Restaurant </label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> Shoping</label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i>
+                                        Others</label></li>
+                            </ul>
+                        </div>
+                        <div class="widget widget_price_filter"><h3>Price Level</h3>
+                            <div class="price-slider-wrapper">
+                                <div class="price-slider"></div>
+                                <div class="price_slider_amount">
+                                    <div class="price_label"><span class="from"></span> - <span class="to"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget widget_has_radio_checkbox"><h3>Star Rating</h3>
+                            <ul>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i> <i class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i> <i
+                                                    class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating"><i class="fa fa-star"></i></span></label></li>
+                                <li><label><input type="checkbox"> <i class="awe-icon awe-icon-check"></i> <span
+                                                class="rating">Unrated</span></label></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

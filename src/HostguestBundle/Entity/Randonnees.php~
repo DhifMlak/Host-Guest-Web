@@ -1,0 +1,155 @@
+<?php
+
+namespace HostguestBundle\Entity;
+
+/**
+ * Randonnees
+ */
+class Randonnees
+{
+    /**
+     * @var string
+     */
+    private $titre;
+
+    /**
+     * @var string
+     */
+    private $lieu;
+
+    /**
+     * @var integer
+     */
+    private $nbmax;
+
+    /**
+     * @var string
+     */
+    private $description;
+
+    /**
+     * @var \HostguestBundle\Entity\Offres
+     */
+    private $id;
+
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     *
+     * @return Randonnees
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set lieu
+     *
+     * @param string $lieu
+     *
+     * @return Randonnees
+     */
+    public function setLieu($lieu)
+    {
+        $this->lieu = $lieu;
+
+        return $this;
+    }
+
+    /**
+     * Get lieu
+     *
+     * @return string
+     */
+    public function getLieu()
+    {
+        return $this->lieu;
+    }
+
+    /**
+     * Set nbmax
+     *
+     * @param integer $nbmax
+     *
+     * @return Randonnees
+     */
+    public function setNbmax($nbmax)
+    {
+        $this->nbmax = $nbmax;
+
+        return $this;
+    }
+
+    /**
+     * Get nbmax
+     *
+     * @return integer
+     */
+    public function getNbmax()
+    {
+        return $this->nbmax;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Randonnees
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set id
+     *
+     * @param \HostguestBundle\Entity\Offres $id
+     *
+     * @return Randonnees
+     */
+    public function setId(\HostguestBundle\Entity\Offres $id = null)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return \HostguestBundle\Entity\Offres
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

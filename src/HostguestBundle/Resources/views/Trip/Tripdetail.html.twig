@@ -1,0 +1,241 @@
+{% extends '@Hostguest/layout.html.twig' %}
+
+{% block content %}
+
+<section class="product-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="product-detail__info">
+                    <div class="product-title"><h2>Details de votre sortie </h2></div>
+                    <div class="product-address"><span>{{ sorty.titre }} | Contact H&G : 73 001 001</span>
+                    </div>
+                    <div class="product-email"><i class="fa fa-envelope"></i> <a href="#" data-toggle="modal" data-target="#MailModal">Envoyer sortie par E-mail</a>
+                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="" data-toggle="modal" data-target="#MailModal">
+                        envoyer mail
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="MailModal" tabindex="-1" role="dialog" aria-labelledby="MailModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <form action="{{ path('hostguest_sendmail',{'id':sorty.id.id}) }}" method="POST">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="MailModalLabel"> Veuillez saisir </h4>
+                                </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Adresse Mail destinataire</label>
+                                            <input type="text" class="form-control" id="" name="adresse" value=""required>
+                                        </div>
+                                    </div>
+
+
+                                <div class="modal-footer">
+                                    <input type="submit" class="awe-btn" onclick=''>Envoyer</input>
+                                    <button type="button" class="awe-btn" onclick='' data-dismiss="modal">Annuler</button>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="trips">
+                        <div class="item"><h6>Lieu</h6>
+                            <p><i class="awe-icon awe-icon-attraction"></i>{{ sorty.lieu }}</p></div>
+                        <div class="item"><h6>Date</h6>
+                            <p><i class="fa fa-clock-o"></i>{{ sorty.date |date("d/m/Y")}}</p></div>
+                        <div class="item"><h6>Type</h6>
+                            <p>{{ sorty.typeSortie }}</p></div>
+                        <div class="item"><h6>Description</h6>
+                            <p>{{ sorty.description }}</p></div>
+                        <div class="item"><h6>Conditions</h6>
+                            <p title="English, Germans, Italy,  Vienamese">{{ sorty.conditions }}</p>
+                        </div>
+                    </div>
+                    <table class="ticket-price">
+                        <thead>
+                        <tr>
+                            <th class="ticket-price"><p>Prix sortie :</p></th>
+                            <th class="adult"><span> 1 Personne </span></th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="ticket-price"><em> Ce ticket ne peut être utilisé que par une seule personne  </em></td>
+                            <td class="adult">
+                                <ins><span class="amount">15Dt </span></ins>
+                                <del><span class="amount">25Dt</span></del>
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="product-detail__gallery">
+                    <div class="product-slider-wrapper">
+                        <div class="product-slider">
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/1.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/2.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/3.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/4.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/5.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/6.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/7.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/8.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/9.jpg') }}" alt=""></div>
+                            <div class="item"><img src="{{ asset('template/FrontEnd/images/img/10.jpg') }}" alt=""></div>
+                        </div>
+                        <div class="product-slider-thumb-row">
+                            <div class="product-slider-thumb">
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-1.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-2.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-3.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-4.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-5.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-1.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-2.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-3.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-4.jpg') }}" alt=""></div>
+                                <div class="item"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb-5.jpg') }}" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="product-tabs tabs">
+                    <ul>
+                        <li><a href="#tabs-3">Evaluations </a></li>
+                    </ul>
+                    <div class="product-tabs__content">
+                        <div id="tabs-3">
+                            <div id="reviews">
+                                <div class="rating-info">
+                                    <div class="average-rating-review good"><span class="count">7.5</span> <em>Average
+                                            rating</em> <span>Good</span></div>
+                                    <ul class="rating-review">
+                                        <li><em>Facility</em> <span>7.5</span></li>
+                                        <li><em>Human</em> <span>9.0</span></li>
+                                        <li><em>Service</em> <span>9.5</span></li>
+                                        <li><em>Interesting</em> <span>8.7</span></li>
+                                    </ul>
+                      <a href={{ path('evaluations_new',{'id':sorty.id.id}) }} class="awe-btn"> Evaluer</a></div>
+                    <a href={{ path('evaluations_connecte') }} class="awe-btn"> Mes evaluations</a><div>
+
+                                <div id="add_review"><h3 class="comment-reply-title">Add a review</h3>
+                                    <form>
+                                        <div class="comment-form-author"><label for="author">Name <span
+                                                        class="required">*</span></label><input id="author" type="text">
+                                        </div>
+                                        <div class="comment-form-email"><label for="email">Email <span
+                                                        class="required">*</span></label><input id="email" type="text">
+                                        </div>
+                                        <div class="comment-form-rating"><h4>Your Rating</h4>
+                                            <div class="comment-form-rating__content">
+                                                <div class="item facility"><label>Facility</label><select
+                                                            class="awe-select">
+                                                        <option>5.0</option>
+                                                        <option>6.5</option>
+                                                        <option>7.5</option>
+                                                        <option>8.5</option>
+                                                        <option>9.0</option>
+                                                        <option>10</option>
+                                                    </select></div>
+                                                <div class="item human"><label>Human</label><select
+                                                            class="awe-select">
+                                                        <option>5.0</option>
+                                                        <option>6.5</option>
+                                                        <option>7.5</option>
+                                                        <option>8.5</option>
+                                                        <option>9.0</option>
+                                                        <option>10</option>
+                                                    </select></div>
+                                                <div class="item service"><label>Service</label><select
+                                                            class="awe-select">
+                                                        <option>5.0</option>
+                                                        <option>6.5</option>
+                                                        <option>7.5</option>
+                                                        <option>8.5</option>
+                                                        <option>9.0</option>
+                                                        <option>10</option>
+                                                    </select></div>
+                                                <div class="item interesting"><label>Interesting</label><select
+                                                            class="awe-select">
+                                                        <option>5.0</option>
+                                                        <option>6.5</option>
+                                                        <option>7.5</option>
+                                                        <option>8.5</option>
+                                                        <option>9.0</option>
+                                                        <option>10</option>
+                                                    </select></div>
+                                            </div>
+                                        </div>
+                                        <div class="comment-form-comment"><label for="comment">Your
+                                                Review</label><textarea id="comment"></textarea></div>
+                                        <div class="form-submit"><input type="submit" class="submit" value="Submit">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div id="comments">
+                                    <ol class="commentlist">
+
+                                        {% for evaluations in evaluations  %}
+                                        <li>
+                                            <div class="comment-box">
+                                                <div class="avatar"><img src="{{ asset('template/FrontEnd/images/img/demo-thumb.jpg') }}" alt="">
+                                                </div>
+                                                <div class="comment-body"><p class="meta"><strong>
+                                                            {{ evaluations.titre }}</strong> </p>
+                                                    <div class="description"><p>{{ evaluations.commentaire }}</p>
+                                                    </div>
+                                                    <div class="rating-info">
+                                                        <div class="average-rating-review good"><span class="count">{{ evaluations.note }}</span>
+                                                            <em>Average rating</em> <span>
+
+                                                                {% if evaluations.note < 5  %}
+                                                                Bad
+                                                                {% elseif evaluations.note == 5 %}
+                                                                Moyen
+                                                                {% else %}
+                                                                Good
+                                                                {% endif %}
+                                                            </span></div>
+                                                        <ul class="rating-review">
+                                                            <li><em>Facility</em> <span>{{ evaluations.facility }}</span></li>
+                                                            <li><em>Human</em> <span>{{ evaluations.human }}</span></li>
+                                                            <li><em>Service</em> <span>{{ evaluations.service }}</span></li>
+                                                            <li><em>Interesting</em> <span>{{ evaluations.interesting }}</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {%  endfor %}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="detail-sidebar">
+                    <div class="call-to-book"><i class="awe-icon awe-icon-phone"></i> <em>Pour plus de détails ,veuillez nous contacter par telephone </em> <span>+21673001001</span>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

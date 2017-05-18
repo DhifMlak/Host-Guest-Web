@@ -1,0 +1,56 @@
+{% extends "HostguestBundle:Default:Base2.html.twig" %}
+
+{% block  container_front %}
+    <div id="page-wrapper" >
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-header">
+                        Logement non validé
+                    </h1>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>titre</th>
+                                    <th>adresse</th>
+                                    <th>ville</th>
+                                    <th>pays</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for m in logements %}
+                                    <tr>
+                                        <th>{{ m.id.id }}</th>
+                                        <th>{{ m.titre }}</th>
+                                        <th>{{ m.adresse }}</th>
+                                        <th>{{ m.ville }}</th>
+                                        <th>{{ m.paye }}</th>
+
+                                        <th><a href="{{ path('Delete_Logement',{'id':m.id.id}) }}">Supprimer</a></th>
+                                        <th><a href="{{ path('Detail_logement',{'id': m.id.id}) }}">detail</a></th>
+                                    </tr>
+                                {% else %}
+                                    <strong>La liste des Modeles est vide !</strong>
+                                {% endfor %}
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+        </div>
+
+        <!-- /. PAGE INNER  -->
+    </div>
+
+
+{% endblock  %}

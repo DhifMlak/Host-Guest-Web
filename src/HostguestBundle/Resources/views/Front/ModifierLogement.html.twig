@@ -1,0 +1,58 @@
+{% extends "HostguestBundle:Default:Base.html.twig" %}
+
+{% block  container_front %}
+
+    <h1>Mise à jour</h1>
+    {{ form_start(form) }}
+    <table>
+        <tr>
+            <td>titre</td>
+            <td>{{ form_widget(form.titre) }}</td>
+        </tr>
+        <tr>
+            <td>Adresse</td>
+            <td>{{ form_widget(form.adresse) }}</td>
+        </tr>
+        <tr>
+            <td>Ville</td>
+            <td>{{ form_widget(form.ville) }}</td>
+        </tr>
+        <tr>
+            <td>Pays</td>
+            <td>{{ form_widget(form.paye) }}</td>
+        </tr>
+        <tr>
+            <td>Prix</td>
+            <td>{{ form_widget(form.prix) }}</td>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>{{ form_widget(form.type) }}</td>
+        </tr>
+        <tr>
+
+            <td>{{ form_widget(form.internet) }}</td>
+        </tr>
+        <tr>
+
+            <td>{{ form_widget(form.parking) }}</td>
+        </tr>
+        <tr>
+
+            <td>{{ form_widget(form.piscine) }}</td>
+        </tr>
+        <tr>
+
+            <td>{{ form_widget(form.cableTv) }}</td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>{{ form_widget(form.save) }}</td>
+        </tr>
+
+    </table>
+    {{ form_end(form) }}
+
+
+{% endblock  %}

@@ -1,0 +1,169 @@
+hostguest_sorties:
+    resource: "@HostguestBundle/Resources/config/routing/sorties.php"
+    prefix:   /sorties
+
+hostguest_homepage:
+    path:     /trip
+    defaults: { _controller: HostguestBundle:Default:index }
+hostguest_profile:
+    path:     /profile
+    defaults: { _controller: HostguestBundle:Profile:index }
+hostguest_trip_detail:
+    path:     /detail
+    defaults: { _controller: HostguestBundle:Default:detailIndex }
+hostguest_trip_edit:
+    path:     /profile/edit/{id}
+    defaults: { _controller: HostguestBundle:Profile:edit }
+hostguest_trip_delete:
+    path:     /profile/delete/{id}
+    defaults: { _controller: HostguestBundle:Profile:delete }
+hostguest_admin_index:
+    path:     /admin
+    defaults: { _controller: HostguestBundle:Admin:index }
+hostguest_admin_sortie_delete:
+    path:     /admin/delete/{id}
+    defaults: { _controller: HostguestBundle:Admin:delete }
+hostguest_sendmail:
+    path:     /mail/{id}
+    defaults: { _controller: HostguestBundle:Sorties:sendMail}
+
+evaluations_index:
+    path:     /
+    defaults: { _controller: "HostguestBundle:Evaluations:index" }
+    methods:  GET
+
+evaluations_show:
+    path:     /{id}/show
+    defaults: { _controller: "HostguestBundle:Evaluations:show" }
+
+evaluations_new:
+    path:     /{id}/new
+    defaults: { _controller: "HostguestBundle:Evaluations:new" }
+
+evaluations_connecte:
+    path:     /myEval
+    defaults: { _controller: "HostguestBundle:Evaluations:myEval" }
+
+evaluations_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "HostguestBundle:Evaluations:edit" }
+
+evaluations_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "HostguestBundle:Evaluations:delete" }
+evaluations_chartLine:
+    path:     /chartline
+    defaults: { _controller: "HostguestBundle:Evaluations:chartLine" }
+evaluations_chartpie:
+    path:     /chartpie
+    defaults: { _controller: "HostguestBundle:Evaluations:chartPie" }
+hostguest_admin_BannerClient:
+    path:     /BannerClient/{id}
+    defaults: { _controller: "HostguestBundle:Admin:BannerClient" }
+
+
+# rondotravaill
+host_guest_randonnee_homepage:
+    path:     /rondonne
+    defaults: { _controller: HostguestBundle:Randonnee:list }
+DetailRando:
+    path:     /Detail/{id}
+    defaults: { _controller: HostguestBundle:Randonnee:detail }
+AjouterRando:
+    path:     /Host/Ajouter
+    defaults: { _controller: HostguestBundle:Randonnee:ajouter }
+ListRando:
+    path:     /List
+    defaults: { _controller: HostguestBundle:Randonnee:list }
+ChercherRando:
+    path:     /Chercher
+    defaults: { _controller: HostguestBundle:Randonnee:Chercher }
+MesRando:
+    path:     /Host/MesRando
+    defaults: { _controller: HostguestBundle:Randonnee:MesRando }
+SupprimerRando:
+    path:     /Host/SupprimerRando/{id}
+    defaults: { _controller: HostguestBundle:Randonnee:Supprimer }
+ModifierRando:
+    path:     /Host/ModifierRando/{id}
+    defaults: { _controller: HostguestBundle:Randonnee:Modifier }
+ChercherMesRando:
+    path:     /Host/ChercherMine
+    defaults: { _controller: HostguestBundle:Randonnee:ChercherMesRando }
+AjoutRando:
+    path:     /Host/Ajout
+    defaults: { _controller: HostguestBundle:Randonnee:ajout }
+ListAdmin:
+    path:     /Listadminrondon
+    defaults: { _controller: HostguestBundle:Randonnee:ListAdmin }
+ApprouveRando:
+    path:     /Admin/ApprouverAdmin/{id}
+    defaults: { _controller: HostguestBundle:Randonnee:Approuver }
+SupprimerAdminRando:
+    path:     /Admin/SupprimerAdmin/{id}
+    defaults: { _controller: HostguestBundle:Randonnee:SuuprimerAdmin }
+# logmenttravaill
+
+# crud hote
+ajoutLogement:
+    path:     /hote/ajouter
+    defaults: { _controller: HostguestBundle:Logement:Ajouter }
+
+Delete_Logement:
+    path:     /deleteLog/{id}
+    defaults: { _controller: HostguestBundle:Logement:Supprimer }
+
+Update_Logement:
+    path:     /hote/updateLog/{id}
+    defaults: { _controller: HostguestBundle:Logement:Modifier }
+
+ajoutLogementHote:
+    path:     /hote/index
+    defaults: { _controller: HostguestBundle:Logement:indexHote }
+
+chercher_Mes_Logs:
+    path:     /hote/chercher
+    defaults: { _controller: HostguestBundle:Logement:MesLogements }
+
+# Admin
+ValiderLogement:
+    path:     /admin/valider
+    defaults: { _controller: HostguestBundle:Logement:Valider }
+# fin Admin
+# Guest
+afficher_Logements:
+    path:     /ListLogs
+    defaults: { _controller: HostguestBundle:Logement:List1 }
+
+chercher_logement:
+    path:     /chercher
+    defaults: { _controller: HostguestBundle:Logement:Chercher }
+
+Detail_logement:
+    path:     /detaillog/{id}
+    defaults: { _controller: HostguestBundle:Logement:detail }
+# reservation
+reservations_index:
+    path:     /reservation
+    defaults: { _controller: "HostguestBundle:Reservations:index" }
+    methods:  GET
+
+reservations_show:
+    path:     /{id}/showreservation
+    defaults: { _controller: "HostguestBundle:Reservations:show" }
+    methods:  GET
+
+reservations_new:
+    path:     /{idOffre}/newreservation
+    defaults: { _controller: "HostguestBundle:Reservations:new" }
+    methods:  [GET, POST]
+
+reservations_edit:
+    path:     /{id}/editreservation
+    defaults: { _controller: "HostguestBundle:Reservations:edit" }
+    methods:  [GET, POST]
+
+reservations_delete:
+    path:     /{id}/deletereservation
+    defaults: { _controller: "HostguestBundle:Reservations:delete" }
+    methods:  DELETE

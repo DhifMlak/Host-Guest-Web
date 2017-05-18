@@ -1,0 +1,97 @@
+{% extends "HostguestBundle:Front:home.html.twig" %}
+{% block content %}
+    <section class="filter-page">
+
+        </div>
+
+
+        <section class="your-destinations-section-demo">
+            <div class="container">
+                <div class="your-destinations">
+                    <!-- Formulaire d'ajout -->
+
+                    <div class="checkout-page__content">
+                        <div class="customer-content">
+                            <!-- <div class="destination-list__content">-->
+                            <form action="{{ path('AjoutRando') }}" method="post" role="form"  name="formulaire" >
+                                <div class="woocommerce-billing-fields">
+
+                                    <h3>Ajouter Randonnée</h3>
+
+                                    <div class="shipping_address">
+
+
+
+
+                                        <div class="form-row" id="shipping_address_1_field">
+                                            {{ form_label(form.titre) }}
+                                            {{ form_widget(form.titre, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.titre) }}
+                                        </div>
+                                        <div class="form-row" id="shipping_city_field">
+                                            {{ form_label(form.lieu) }}
+                                            {{ form_widget(form.lieu, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.lieu) }}
+                                        </div>
+                                        <div class="form-row" id="shipping_state_field">
+                                            {{  form_label(form.nbmax) }}
+                                            {{ form_widget(form.nbmax, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.nbmax) }}
+
+                                        </div>
+
+                                        <div class="form-row" id="shipping_address_1_field">
+                                            {{  form_label(form.lieuRencontre) }}
+                                            {{ form_widget(form.lieuRencontre, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.lieuRencontre) }}
+                                        </div>
+                                        <div class="form-row" id="shipping_postcode_field">
+                                            {{  form_label(form.prix) }}
+                                            {{ form_widget(form.prix, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.prix) }}
+                                        </div>
+                                        <div class="form-row" id="shipping_phone_field">
+                                            {{ form_label(form.heureRencontre) }}
+                                            {{ form_widget(form.heureRencontre, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.heureRencontre) }}
+                                        </div>
+
+
+                                        <div class="form-row" id="order_comments_field">
+                                            {{ form_label(form.description) }}
+                                            {{ form_widget(form.description, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.description) }}
+
+                                        </div><br>
+                                        <div class="form-row" id="order_comments_field">
+                                            {{ form_label(form.photo) }}
+                                            {{ form_widget(form.photo, { 'attr': { 'class': 'form-control' } }) }}
+                                            {{ form_errors(form.photo) }}
+
+                                        </div><br>
+
+                                    </div>
+
+
+
+
+                                </div>
+                                <div id="payment"><div class="form-row place-order">{{ form_widget(form.Valider) }}</div></div>
+                            </form>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        </div>
+        </div>
+    </section>
+{% endblock content %}
