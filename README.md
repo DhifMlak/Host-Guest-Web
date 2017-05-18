@@ -1,4 +1,4 @@
-.checkout
+Host&Guest
 =========
 
-A Symfony project created on March 28, 2017, 2:49 pm.
+A Symfony project.
